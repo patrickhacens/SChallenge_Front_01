@@ -3,7 +3,7 @@
 Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de frontend.
 
 Dentro desse repositório você irá encontrar 3 releases, para windows, linux e macos, todos em 64bits.
-Essas releases permitirão que você execute a API que deverá se integrar com, essa API estará rodando na porta 5000 sem HTTPS.
+Essas releases permitirão que você execute a API que sua solução deverá se integrar com, essa API estará rodando na porta 5000 **sem HTTPS**.
 Uma documentação SWAGGER está disponivel em http://localhost:5000/swagger/index.html você poderá usa-la para testar e auxilia-lo na integração.
 O dados são persistidos enquanto a aplicação estiver rodando e possuirá dados iniciais aleatórios a cada inicialização, porém o usuário abaixo sempre estará cadastrado para facilitar os testes
 
@@ -25,77 +25,82 @@ Para esse desafio você deverá ***forkar*** esse repositório e altera-lo para 
 Será avaliado o funcionamento dos requisitos, código, design patterns e arquitetura, então não só o requisito funcional será avaliado como também toda a infraestrutura de código e algoritmos para atingir o funcionamento do requisito, por isso é recomendado que considere esse desafio, mesmo que pequeno, como um projeto de alta complexidade e mostre suas capacidades como desenvolvedor.
 
 ## Requisitos
-Para atingir os requisitos abaixo descritos você pode adicionar quantos projetos/bibliotecas achar necessário. 
+Para atingir os requisitos abaixo descritos você pode adicionar quantos projetos/bibliotecas achar necessário, **porém utilizar React é um grande plus**.
 
 É requerido ambas as **interfaces** e **integrações** das funcionalidades.
 
 ### Autenticação
 > 
-> Deverá retornar um token que permita a autenticação e autorização do portador desse token.
-> No seu repositório você deverá descrever como a sua aplicação espera que esse token seja enviado.
+> Deverá haver uma tela para autenticar no sistema. Porém apenas a funcionalidade de cadastro de eventos requer autenticação então para isso você deverá criar um componente de perfil visualizado no canto superior direito da plataforma, permitindo acessar a tela de autenticação caso desautenticado e fazer logout. A autenticação é feita através de um token JWT que deverá ser enviado em todas as requisições quando autenticado no Header Authorization no formato: `Bearer {token}`.
 > 
+> Você também deverá persistir a autenticação sendo que quando fechar a janela a aba no browser e abrir denovo o estado de autenticação deverá se manter.
+>
+
+### Menu lateral
+>
+> Deverá haver um menu lateral que permita o acesso aos requisitos abaixo.
+>
 
 ### Gestão de usuários
 
 #### Listar
 > 
-> Deverá retornar uma lista com os dados não sensiveis dos usuários cadastrados.
+> Deverá listar os usuários do sistema, de forma paginada.
 > 
 
 #### Criar
 > 
-> Deverá receber as informações de um usuário e cadastra-lo, sendo disponibilizado no endpoint de listagem.
+> Deverá permitir inserir as informações para cadastrar um usuário.
 > 
 
 #### Remover
 > 
-> Deverá receber o identificador do usuário e remove-lo, impossibilitando a listagem e autenticação dele.
+> Deverá ser um componente na lista de usuários que o permita exclui-lo.
 > 
 
 ### Gestão de eventos
 
 #### Cadastrar
 > 
-> Deverá receber os dados do evento, exceto criador, e cadastra-lo, a informação do criador do evento deverá pega automaticamente através do usuário autenticado e esse endpoint só poderá ser acessado por usuário autenticados.
+> Deverá permitir cadastrar um usuário, o endpoint para essa ação requer autenticação e a interface também deverá trata-lo.
 > 
 
 #### Listar
 > 
-> Deverá receber a quantidade de itens e página usados para a paginação
-> e data minima e máxima (opcionais) usados como filtro através do queryparams  
-> e retornar alem da lista (simplificada) paginada informações sobre a quantidade total de itens.
+> Deverá permitir listar os eventos de forma paginada.
+> Deverá também possuir filtros de data minima e máxima, esses filtros deverão ser opcionais.
 > 
 
 #### Detalhar
 > 
-> Deverá receber o identificador do evento e trazer os dados completo desse evento.
+> Deverá mostrar todos as informações de um evento e deve estar disponivel a partir da interface de listagem.
 > 
 
 #### Editar
 > 
-> Deverá receber o identificador do evento a ser alterado e os novos dados do evento no payload da requisição.
+> Deverá permitir alterar as informações de um evento conforme o que a API disponibiliza.
 > 
 
 #### Remover
 > 
-> Deverá receber o identificador do evento e remove-lo.
+> Deverá permitir remover um evento, deverá também estar disponivel através da interface de listagem e de detalhe.
 > 
 
 ### Dashboard
 
 #### Eventos Anuais
 > 
-> Deverá receber o ano e retornar por mês a quantidade de eventos que aconteceram naquele ano.
+> Deverá mostrar os dados dos eventos anuais com um filtro de ano que deverá iniciar no ano atual.
 > 
 
 #### Eventos por usuário
 > 
-> Deverá retornar uma lista com o usuário e a quantidade de eventos que eles criaram.
+> Deverá mostrar os dados de eventos por usuário.
 >
 
 #### Top 10 eventos com mais participantes
 >
-> Deverá retornar uma lista com os 10 eventos com mais participantes ordernados do maior para o menor
+> Deverá mostrar um ranking com os top 10 eventos com mais participantes
 >
 
 ### Execução
