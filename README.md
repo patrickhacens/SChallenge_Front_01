@@ -1,10 +1,23 @@
 # SENAI Frontend Challenge 01.01
 
-Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de backend.
+Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de frontend.
 
-Dentro desse repositório você irá encontrar um projeto web `SChallenge.csproj` recem criado através da DOTNET CLI usando o comando abaixo.
+Dentro desse repositório você irá encontrar 3 releases, para windows, linux e macos, todos em 64bits.
+Essas releases permitirão que você execute a API que deverá se integrar com, essa API estará rodando na porta 5000 sem HTTPS.
+Uma documentação SWAGGER está disponivel em http://localhost:5000/swagger/index.html você poderá usa-la para testar e auxilia-lo na integração.
+O dados são persistidos enquanto a aplicação estiver rodando e possuirá dados iniciais aleatórios a cada inicialização, porém o usuário abaixo sempre estará cadastrado para facilitar os testes
 
-> dotnet new web
+> Usuario: string
+> 
+> Password: string
+
+Para executar no windows abra um terminal e utilize o comando:
+> SChallengeAPI.exe
+
+Para executar no linux ou macos abra um terminal e utilize o comando:
+> chmod a+x SChallengeAPI
+>
+> ./SChallengeAPI
 
 Para esse desafio você deverá ***forkar*** esse repositório e altera-lo para habilitar os requisitos abaixo descritos.
 
@@ -14,9 +27,7 @@ Será avaliado o funcionamento dos requisitos, código, design patterns e arquit
 ## Requisitos
 Para atingir os requisitos abaixo descritos você pode adicionar quantos projetos/bibliotecas achar necessário. 
 
-É requerido apenas os **endpoints** das funcionalidades então não é necessário se preocupar com interfaces visuais.
-
-Sua aplicação deverá atender o protocolo HTTP/S
+É requerido ambas as **interfaces** e **integrações** das funcionalidades.
 
 ### Autenticação
 > 
@@ -42,14 +53,6 @@ Sua aplicação deverá atender o protocolo HTTP/S
 > 
 
 ### Gestão de eventos
-#### Dados
-> Os eventos deverão possuir os seguintes dados:
->- Identificador
->- Nome do evento
->- Número de participantes
->- Data de acontecimento
->- Duração do evento
->- Criador
 
 #### Cadastrar
 > 
@@ -95,14 +98,9 @@ Sua aplicação deverá atender o protocolo HTTP/S
 > Deverá retornar uma lista com os 10 eventos com mais participantes ordernados do maior para o menor
 >
 
-### Swagger
+### Execução
 > 
-> Deverá haver um endpoint de documentação swagger ou openapi equivalente, você deverá documentar no seu README.md como acessa-la.
-> 
-
-### Seeding
-> 
-> Deverá haver uma forma, seja endpoint ou script para que o haja uma injeção inicial de dados para testes da API, documente como utilizar essa forma de seeding no seu README.md.
+> Você deverá adicionar no README.md os passos necessários para builder e executar o seu projeto se necessário
 > 
 
 ## Entrega
