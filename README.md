@@ -1,4 +1,4 @@
-# SENAI Backend Challenge 01.01
+# SENAI Frontend Challenge 01.01
 
 Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de backend.
 
