@@ -3,7 +3,7 @@
 Este é um desafio de desenvolvimento de software para avaliar suas habilidades relacionadas a area de frontend.
 
 Dentro desse repositório você irá encontrar 3 releases, para windows, linux e macos, todos em 64bits.
-Essas releases permitirão que você execute a API que sua solução deverá se integrar com, essa API estará rodando na porta 5000 **sem HTTPS**.
+Essas releases permitirão que você execute a API, essa API estará rodando na porta 5000 **sem HTTPS**. O seu entregavél desse teste deverá se integrar com essa API.
 Uma documentação SWAGGER está disponivel em http://localhost:5000/swagger/index.html você poderá usa-la para testar e auxilia-lo na integração.
 O dados são persistidos enquanto a aplicação estiver rodando e possuirá dados iniciais aleatórios a cada inicialização, porém o usuário abaixo sempre estará cadastrado para facilitar os testes
 
